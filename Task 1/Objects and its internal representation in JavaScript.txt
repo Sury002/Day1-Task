@@ -1,0 +1,41 @@
+                                  Objects and its internal representation in JavaScript
+
+
+Introduction:
+
+JavaScript, as one of the most versatile and widely used programming languages, employs objects as one of its fundamental data types. Objects are pivotal in JavaScript, serving as the building blocks for data manipulation and structuring. However, understanding how objects are represented internally in JavaScript is crucial for writing efficient and maintainable code. In this blog, we delve into the internal representation of objects in JavaScript, shedding light on their intricacies and providing insights into their behavior.
+
+Understanding Object in JavaScript:
+
+In JavaScript, an object is a collection of key-value pairs, where each key is a string (or a symbol) and each value can be any data type, including other objects, functions, arrays, or primitives. Objects in JavaScript are dynamic, meaning that properties can be added or removed at runtime. This flexibility makes them powerful for representing complex data structures and modeling real-world entities.
+
+Internal Representation of Objects:
+
+Internally, JavaScript engines use various techniques to represent objects efficiently. One common approach is using hash tables (also known as hash maps or dictionaries) to store object properties. Hash tables offer constant-time complexity for property access, insertion, and deletion, making them suitable for dynamic environments like JavaScript.
+
+When you create an object literal in JavaScript, such as:
+
+```javascript
+const person = {
+  name: "John",
+  age: 30
+};
+```
+
+The JavaScript engine allocates memory for the object and its properties. Each property is stored as a key-value pair in the object's hash table. In this example, the keys "name" and "age" are hashed to determine their storage locations in the hash table, and their corresponding values are stored accordingly.
+
+Prototypes and Inheritance:
+
+In JavaScript, objects can inherit properties and methods from other objects through prototypes. Each object in JavaScript has an internal link to another object called its prototype. When a property is accessed on an object, the JavaScript engine first checks if the property exists on the object itself. If not, it follows the prototype chain by looking up the property on the object's prototype, and so on, until it finds the property or reaches the end of the chain.
+
+This prototype-based inheritance system allows for code reuse and promotes a more compact memory representation of objects. Instead of duplicating properties and methods across multiple objects, JavaScript objects can share common properties and methods through their prototypes.
+
+Optimizations and Performance:
+
+JavaScript engines employ various optimizations to enhance the performance of object operations. One optimization technique is property access caching, where the engine caches property access information to avoid unnecessary lookups in the prototype chain.
+
+Additionally, modern JavaScript engines use hidden classes (or shapes) to optimize object property access and memory usage. Hidden classes allow the engine to efficiently track changes to object structures and optimize property access based on their layout.
+
+Conclusion:
+
+Objects are central to JavaScript programming, providing a flexible and powerful means of representing data and modeling real-world entities. Understanding the internal representation of objects in JavaScript is essential for writing efficient and maintainable code. By grasping the concepts of hash tables, prototypes, inheritance, and optimization techniques employed by JavaScript engines, developers can leverage the full potential of objects in their applications.
